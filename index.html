@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStop | Home</title>
+    <script src="https://kit.fontawesome.com/83d1bb4779.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" type="icon" href="../logos/favicon.png">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="../logos/Logo.svg" alt="">
+        </div>
+        <button id="mobile-menu" class="mobile-menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <div class="cart">
+            <img src="../logos/shopping-cart.png" alt="">
+        </div>
+    </nav>
+    <div id="mobile-menu-container">
+        <ul>
+            <li class="top"><a href="#">Home</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <main>
+        <div class="sort">
+            <div class="item">
+                <img src="../logos/Halo-Infinite-1.jpg" alt="">
+                <p>Games</p>
+            </div>
+
+            <div class="item">
+                <img src="../logos/Accessories.jpg" alt="">
+                <p>Accessories</p>
+            </div>
+
+            <div class="item">
+                <img src="../logos/Electronics.png" alt="">
+                <p>Electronics</p>
+            </div>
+
+            <div class="item">
+                <img src="../logos/Toys-collectibles.jpg" alt="">
+                <p>Toys & Collectibles</p>
+            </div>
+
+            <div class="item">
+                <img src="../logos/STRANGER-THINGS-T-SHIRT.jpg" alt="">
+                <p>Clothing</p>
+            </div>
+        </div>
+        <div class="width">
+            <div class="sale-slider">
+                <img name="slide">
+            </div>
+        </div>
+        <div class="center">
+            <div class="covid">
+                <h5>Coronavirus Update</h5>
+                <div class="text">
+                    <p>
+                        All items accepted in trades are disinfected for
+                    </p>
+                    <p>
+                        customer and store associate safety.
+                    </p>
+                </div>
+
+                <div class="links">
+                    <a href="#">
+                        contact
+                    </a>
+
+                    <p>
+                        <a href="#">
+                            EXPLORE MORE <i class="fas fa-arrow-circle-right"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="center-one">
+            <div class="pro-day-sale">
+                <div class="row">
+                    <div class="line"></div><div class="line-one"></div><div class="line-two"></div>
+                </div>
+                <p>JOIN US FOR</p>
+                <h2>PRO DAY <span class="red">SALE</span></h2>
+                <small>Saterday, January 23<p class="small">RD</p></small>
+                <h5>Over $1,500 In Savings</h5>
+            </div>
+        </div>
+    </main>
+    <script>
+        const menu = document.getElementById('mobile-menu');
+        const navUL = document.getElementById('mobile-menu-container');
+
+        menu.addEventListener('click', () => {
+            navUL.classList.toggle('show');
+        })
+
+
+        var i = 0;
+        var images = [];
+        var time = 7000;
+
+        images[0] = '../logos/Image-slider-1.jpg';
+        images[1] = '../logos/Image-slider-2.jpg';
+        images[2] = '../logos/Image-slider-3.jpg';
+        images[3] = '../logos/Image-slider-4.jpg';
+
+        function changeImg() {
+            document.slide.src = images[i];
+
+            if(i < images.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+
+            setTimeout("changeImg()", time);
+        }
+
+window.onload = changeImg;
+    </script>
+</body>
+</html>
